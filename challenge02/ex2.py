@@ -14,12 +14,13 @@ def decode_word(word):
     """
     result = []
     while word != "":
-        if int(word[:2]) > 96 and int(word[:2]) < 100:
+        if int(word[:2]) >= 13 and int(word[:2]) < 100:
             result += [int(word[:2])]
             word = word[2:]
         else:
             result += [int(word[:3])]
             word = word[3:]
+    print(result)
     return result
 
 
@@ -54,7 +55,7 @@ def main():
     """
     input = read_file("encrypted.txt")
     decoded_message = decode_message(input)
-    print(f"submit {decoded_message}")
+    print(f"{decoded_message}")
 
 
 if __name__ == "__main__":
